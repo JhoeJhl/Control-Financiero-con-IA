@@ -15,11 +15,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        \App\Models\Category::create(['name' => 'Comida', 'type' => 'expense', 'color' => '#ef4444']);
+        \App\Models\Category::create(['name' => 'Sueldo', 'type' => 'income', 'color' => '#10b981']);
 
-        User::factory()->create([
-            'name' => 'Test User',
+        // Y crea un usuario de prueba con su cuenta
+        $user = \App\Models\User::create([
+            'name' => 'Usuario Prueba',
             'email' => 'test@example.com',
+            'password' => bcrypt('password'),
+        ]);
+
+        $user->accounts()->create([
+            'name' => 'Efectivo',
+            'balance' => 0,
+            'currency' => 'USD'
         ]);
     }
 }
