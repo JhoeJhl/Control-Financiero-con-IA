@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Transaction extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'user_id',
         'account_id',
@@ -17,6 +18,19 @@ class Transaction extends Model
         'type',
         'transaction_date'
     ];
+
+    // Casteos para asegurar los tipos de datos exactos
+    protected $casts = [
+        'transaction_date' => 'date',
+        'amount' => 'decimal:2',
+    ];
+
+    // --- RELACIONES ---
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function account()
     {

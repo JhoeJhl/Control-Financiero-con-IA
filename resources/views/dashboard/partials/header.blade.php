@@ -1,4 +1,4 @@
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-8 mb-12 gap-6">
     <div class="relative">
         <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-indigo-400 rounded-2xl blur opacity-20"></div>
         <div class="relative bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
